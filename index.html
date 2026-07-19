@@ -18,8 +18,8 @@
       <img id="fallingI" class="falling-i" src="assets/i-letter-final.png" alt="">
       <div class="impact-flash"></div>
     </div>
-    <div id="introTagline" class="intro-tagline">ONE BAND. ONE GROOVE. ONE SWITCH.</div>
-    <button id="skipIntro" class="skip-btn">Skip ▸</button>
+    <div id="introTagline" class="intro-tagline" data-i18n="introTagline">ONE BAND. ONE GROOVE. ONE SWITCH.</div>
+    <button id="skipIntro" class="skip-btn" data-i18n="skip">Skip ▸</button>
   </div>
 
   <!-- SITE -->
@@ -28,12 +28,20 @@
     <header class="nav">
       <img class="nav-logo" src="assets/wordmark-hero.png" alt="THE SWITCH">
       <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#music">Music</a>
-        <a href="#booking">Booking</a>
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#gallery" data-i18n="navGallery">Gallery</a>
+        <a href="#music" data-i18n="navMusic">Music</a>
+        <a href="#booking" data-i18n="navBooking">Booking</a>
       </nav>
-      <button id="musicToggle" class="music-toggle" aria-label="Toggle background music">🔇</button>
+      <div class="nav-right">
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-btn active" data-lang="en" aria-label="English">🇬🇧</button>
+          <button class="lang-btn" data-lang="es" aria-label="Español">🇪🇸</button>
+          <button class="lang-btn" data-lang="tl" aria-label="Tagalog">🇵🇭</button>
+          <button class="lang-btn" data-lang="fr" aria-label="Français">🇫🇷</button>
+        </div>
+        <button id="musicToggle" class="music-toggle" aria-label="Toggle background music">🔇</button>
+      </div>
     </header>
 
     <audio id="bgMusic" src="assets/oye-como-va.mp3" loop muted autoplay preload="auto"></audio>
@@ -42,52 +50,56 @@
       <div class="hero-bg hero-bg--1" style="background-image: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.85) 70%, #000), url('assets/hero-bg-1.jpg');"></div>
       <div class="hero-bg hero-bg--2" style="background-image: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.85) 70%, #000), url('assets/hero-bg-2.jpg');"></div>
       <div class="hero-inner">
-        <p class="hero-kicker">6 MUSICIANS &nbsp;•&nbsp; 1 SOUND &nbsp;•&nbsp; ENDLESS ENERGY</p>
+        <p class="hero-kicker" data-i18n="heroKicker">6 MUSICIANS &nbsp;•&nbsp; 1 SOUND &nbsp;•&nbsp; ENDLESS ENERGY</p>
         <div class="hero-logo-wrap">
           <img class="hero-logo" src="assets/wordmark-hero.png" alt="THE SWITCH">
           <div class="hero-i-glow"></div>
         </div>
-        <h2 class="hero-tagline">ONE BAND. ONE GROOVE. <span class="red">ONE SWITCH.</span></h2>
-        <p class="hero-genres">CLASSIC ROCK &nbsp;•&nbsp; POP &nbsp;•&nbsp; TOP 40 &nbsp;•&nbsp; LATIN &nbsp;•&nbsp; DANCE</p>
-        <a href="#booking" class="cta-btn">BOOK THE SWITCH</a>
+        <h2 class="hero-tagline" data-i18n-html="heroTagline">ONE BAND. ONE GROOVE. <span class="red">ONE SWITCH.</span></h2>
+        <p class="hero-genres" data-i18n="heroGenres">CLASSIC ROCK &nbsp;•&nbsp; POP &nbsp;•&nbsp; TOP 40 &nbsp;•&nbsp; LATIN &nbsp;•&nbsp; DANCE</p>
+        <a href="#booking" class="cta-btn" data-i18n="bookBtn">BOOK THE SWITCH</a>
       </div>
       <div class="scroll-cue">↓</div>
     </section>
 
     <section id="about" class="about">
-      <h2 class="section-title">OUR STORY</h2>
+      <div class="about-bg" style="background-image: url('assets/band-photo-story.png');"></div>
+      <h2 class="section-title" data-i18n="aboutTitle">OUR STORY</h2>
       <div class="story-content">
-        <p>THE SWITCH represents energy, transformation, and the moment everything changes. When the band takes the stage, it's like flipping a switch — instantly turning an ordinary night into an unforgettable experience.</p>
-        <p>The name reflects our versatility and ability to seamlessly switch between genres, bringing audiences everything from classic rock, pop, and Latin to dance hits and crowd-favorite cover songs. Most of the band grew up steeped in the Philippines' legendary cover-band tradition, joined by a bandmate who brings a touch of French joie de vivre — melody, flair, and stage presence — six musicians united by one obsession: a shared, unshakable love of music that goes beyond the stage. It's in the hours spent chasing the perfect groove, the endless conversations about the songs that shaped us, and the thrill of watching a room come alive to a track we've loved for years. That obsession is what turns a setlist into a shared experience and a gig into a memory. We adapt to every audience while delivering every performance with passion, professionalism, and high energy.</p>
-        <p>More than just a name, THE SWITCH symbolizes the connection between the band and the crowd. The moment the music starts, people switch from watching to singing, dancing, and celebrating together. Every show is about creating that spark that brings people together and leaves them wanting more.</p>
+        <p data-i18n="storyP1">THE SWITCH represents energy, transformation, and the moment everything changes. When the band takes the stage, it's like flipping a switch — instantly turning an ordinary night into an unforgettable experience.</p>
+        <p data-i18n="storyP2">The name reflects our versatility and ability to seamlessly switch between genres, bringing audiences everything from classic rock, pop, and Latin to dance hits and crowd-favorite cover songs. Most of the band grew up steeped in the Philippines' legendary cover-band tradition, joined by a bandmate who brings a touch of French joie de vivre — melody, flair, and stage presence — six musicians united by one obsession: a shared, unshakable love of music that goes beyond the stage. It's in the hours spent chasing the perfect groove, the endless conversations about the songs that shaped us, and the thrill of watching a room come alive to a track we've loved for years. That obsession is what turns a setlist into a shared experience and a gig into a memory. We adapt to every audience while delivering every performance with passion, professionalism, and high energy.</p>
+        <p data-i18n="storyP3">More than just a name, THE SWITCH symbolizes the connection between the band and the crowd. The moment the music starts, people switch from watching to singing, dancing, and celebrating together. Every show is about creating that spark that brings people together and leaves them wanting more.</p>
       </div>
       <div class="features">
         <div class="feature">
           <span class="feature-icon">🎸</span>
-          <h3>Classic Rock<br>Anthems</h3>
+          <h3 data-i18n-html="featRock">Classic Rock<br>Anthems</h3>
         </div>
         <div class="feature">
           <span class="feature-icon">🪩</span>
-          <h3>Top 40<br>Hits</h3>
+          <h3 data-i18n-html="featTop40">Top 40<br>Hits</h3>
         </div>
         <div class="feature">
           <span class="feature-icon">🌴</span>
-          <h3>Latin<br>Grooves</h3>
+          <h3 data-i18n-html="featLatin">Latin<br>Grooves</h3>
         </div>
         <div class="feature">
           <span class="feature-icon">🕺</span>
-          <h3>Dance Floor<br>Energy</h3>
+          <h3 data-i18n-html="featDance">Dance Floor<br>Energy</h3>
         </div>
         <div class="feature">
           <span class="feature-icon">🤘</span>
-          <h3>One Band<br>All Night</h3>
+          <h3 data-i18n-html="featOneBand">One Band<br>All Night</h3>
         </div>
       </div>
     </section>
 
     <section id="gallery" class="gallery">
-      <h2 class="section-title">GALLERY</h2>
+      <h2 class="section-title" data-i18n="galleryTitle">GALLERY</h2>
       <div class="gallery-grid">
+        <div class="gallery-item gallery-item--full">
+          <img src="assets/band-photo-full.png" alt="The Switch band performing live">
+        </div>
         <div class="gallery-item gallery-item--full">
           <img src="assets/poster.jpg" alt="The Switch band poster">
         </div>
@@ -101,8 +113,8 @@
     </section>
 
     <section id="music" class="music">
-      <h2 class="section-title">LISTEN</h2>
-      <p class="section-sub">Watch The Switch in action.</p>
+      <h2 class="section-title" data-i18n="musicTitle">LISTEN</h2>
+      <p class="section-sub" data-i18n="musicSub">Watch The Switch in action.</p>
       <div class="video-grid">
         <div class="video-embed"><iframe src="https://www.youtube.com/embed/XrhCH0h1l0g" title="The Switch video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         <div class="video-embed"><iframe src="https://www.youtube.com/embed/-HAh0EkfduY" title="The Switch video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
@@ -114,9 +126,9 @@
     </section>
 
     <section id="booking" class="booking">
-      <h2 class="section-title">AVAILABLE FOR</h2>
-      <p class="section-sub">CLUBS &nbsp;•&nbsp; EVENTS &nbsp;•&nbsp; PRIVATE PARTIES &nbsp;•&nbsp; FESTIVALS</p>
-      <a href="mailto:bookingtheswitchband@gmail.com" class="cta-btn">BOOK THE SWITCH</a>
+      <h2 class="section-title" data-i18n="bookingTitle">AVAILABLE FOR</h2>
+      <p class="section-sub" data-i18n="bookingSub">CLUBS &nbsp;•&nbsp; EVENTS &nbsp;•&nbsp; PRIVATE PARTIES &nbsp;•&nbsp; FESTIVALS</p>
+      <a href="mailto:bookingtheswitchband@gmail.com" class="cta-btn" data-i18n="bookBtn">BOOK THE SWITCH</a>
     </section>
 
     <footer class="footer">
@@ -127,7 +139,7 @@
         <a href="#" aria-label="TikTok">TT</a>
       </div>
       <div class="visitor-counter">
-        <span class="counter-label">VISITORS</span>
+        <span class="counter-label" data-i18n="visitorsLabel">VISITORS</span>
         <div id="counterDigits" class="counter-digits"></div>
       </div>
       <p>@THESWITCHBAND &middot; &copy; <span id="year"></span> THE SWITCH</p>
@@ -135,6 +147,7 @@
 
   </div>
 
+  <script src="js/i18n.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
