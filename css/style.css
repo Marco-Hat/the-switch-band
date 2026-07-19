@@ -64,9 +64,9 @@ html, body {
 
 .falling-i {
   position: absolute;
-  left: 43.64%;
-  width: 7.78%;
-  bottom: 0;
+  left: 43.36%;
+  width: 7.42%;
+  bottom: 10.57%;
   filter: drop-shadow(0 0 25px var(--red-glow)) drop-shadow(0 0 55px rgba(224,20,26,.6));
   transform: translateY(-160vh) rotate(-6deg) scaleY(0.85);
   animation: fall 1.1s cubic-bezier(.64,0,.78,1) forwards, wobble .45s ease-out 1.1s;
@@ -88,8 +88,8 @@ html, body {
 
 .impact-flash {
   position: absolute;
-  left: 47.53%;
-  bottom: 0;
+  left: 47.07%;
+  bottom: 10.57%;
   width: 40vw;
   height: 40vw;
   max-width: 500px;
