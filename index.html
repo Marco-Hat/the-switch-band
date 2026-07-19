@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE SWITCH — Live Band</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- INTRO ANIMATION -->
+  <div id="intro">
+    <div class="intro-glow"></div>
+    <div class="logo-stage">
+      <img id="introLogo" class="intro-logo" src="assets/wordmark-gap.png" alt="THE SWITCH">
+      <img id="fallingI" class="falling-i" src="assets/i-letter-slot.png" alt="">
+      <div class="impact-flash"></div>
+    </div>
+    <div id="introTagline" class="intro-tagline">WE SWITCH THE VIBE.</div>
+    <button id="skipIntro" class="skip-btn">Skip ▸</button>
+  </div>
+
+  <!-- SITE -->
+  <div id="site" class="site">
+
+    <header class="nav">
+      <div class="nav-logo">THE <span class="red">SW<span class="red-i">I</span>TCH</span></div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#music">Music</a>
+        <a href="#booking">Booking</a>
+      </nav>
+    </header>
+
+    <section class="hero" style="background-image: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.85) 70%, #000), url('assets/poster.jpg');">
+      <div class="hero-inner">
+        <p class="hero-kicker">6 MUSICIANS &nbsp;•&nbsp; 1 SOUND &nbsp;•&nbsp; ENDLESS ENERGY</p>
+        <h1 class="hero-logo">THE <span class="red">SW<span class="red-i">I</span>TCH</span></h1>
+        <p class="hero-genres">CLASSIC ROCK &nbsp;•&nbsp; POP &nbsp;•&nbsp; TOP 40 &nbsp;•&nbsp; LATIN &nbsp;•&nbsp; DANCE</p>
+        <a href="#booking" class="cta-btn">BOOK THE SWITCH</a>
+      </div>
+      <div class="scroll-cue">↓</div>
+    </section>
+
+    <section class="tagline-banner">
+      <p>WE DON'T JUST PLAY SONGS,</p>
+      <h2>WE <span class="red">SWITCH</span> THE VIBE.</h2>
+    </section>
+
+    <section id="about" class="features">
+      <div class="feature">
+        <span class="feature-icon">🎸</span>
+        <h3>Classic Rock<br>Anthems</h3>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🪩</span>
+        <h3>Top 40<br>Hits</h3>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🌴</span>
+        <h3>Latin<br>Grooves</h3>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🕺</span>
+        <h3>Dance Floor<br>Energy</h3>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🤘</span>
+        <h3>One Band<br>All Night</h3>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <h2 class="section-title">GALLERY</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item" style="background-image:url('assets/poster.jpg')"></div>
+        <div class="gallery-item placeholder">Add photo</div>
+        <div class="gallery-item placeholder">Add photo</div>
+        <div class="gallery-item placeholder">Add video</div>
+      </div>
+    </section>
+
+    <section id="music" class="music">
+      <h2 class="section-title">LISTEN</h2>
+      <p class="section-sub">Drop your Spotify / YouTube / SoundCloud embed here.</p>
+      <div class="music-embed placeholder">🎵 Music player coming soon</div>
+    </section>
+
+    <section id="booking" class="booking">
+      <h2 class="section-title">AVAILABLE FOR</h2>
+      <p class="section-sub">CLUBS &nbsp;•&nbsp; EVENTS &nbsp;•&nbsp; PRIVATE PARTIES &nbsp;•&nbsp; FESTIVALS</p>
+      <a href="mailto:booking@theswitchband.com" class="cta-btn">BOOK THE SWITCH</a>
+    </section>
+
+    <footer class="footer">
+      <div class="social-links">
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="YouTube">YT</a>
+      </div>
+      <p>@THESWITCHBAND · © <span id="year"></span> THE SWITCH</p>
+    </footer>
+
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
