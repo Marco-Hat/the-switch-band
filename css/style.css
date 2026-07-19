@@ -445,4 +445,14 @@ html, body {
 @media (max-width: 700px) {
   .nav-links { display: none; }
   .video-grid { grid-template-columns: 1fr; }
+  .hero-kicker {
+    font-size: .7rem;
+    letter-spacing: 2px;
+    padding: 0 .5rem;
+  }
+  .hero-genres {
+    font-size: .7rem;
+    letter-spacing: 1.5px;
+    padding: 0 .5rem;
+  }
 }
