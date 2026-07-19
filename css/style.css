@@ -252,17 +252,7 @@ html, body {
   inset: 0;
   background-size: cover;
   background-position: center 20%;
-  opacity: 0;
-  animation: heroCrossfade 15s ease-in-out infinite;
-}
-.hero-bg--1 { animation-delay: 0s; }
-.hero-bg--2 { animation-delay: -5s; }
-.hero-bg--3 { animation-delay: -10s; }
-
-@keyframes heroCrossfade {
-  0%, 28% { opacity: 1; }
-  33%, 95% { opacity: 0; }
-  100% { opacity: 1; }
+  opacity: 1;
 }
 
 .hero-inner { position: relative; z-index: 1; max-width: 900px; padding: 0 1.5rem; }
