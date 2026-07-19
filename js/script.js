@@ -34,33 +34,37 @@ document.addEventListener('DOMContentLoaded', () => {
     revealSite();
   });
 
-  // Background music — on by default, muted until a user gesture allows audio
+  // Background music — starts muted (autoplay policy), unmutes on toggle or first interaction
   const bgMusic = document.getElementById('bgMusic');
   const musicToggle = document.getElementById('musicToggle');
-  let musicPlaying = true;
-  musicToggle.textContent = '🔊';
 
-  function startMusic() {
-    bgMusic.play().catch(() => {});
+  function syncToggleIcon() {
+    musicToggle.textContent = bgMusic.muted || bgMusic.paused ? '🔇' : '🔊';
   }
 
-  startMusic();
-  // Browsers block autoplay with sound before any interaction; retry on the first one.
+  function unmuteMusic() {
+    bgMusic.muted = false;
+    bgMusic.play().catch(() => {});
+    syncToggleIcon();
+  }
+
+  syncToggleIcon();
+
+  // Browsers allow muted autoplay; unmute on the visitor's first interaction.
   ['click', 'scroll', 'keydown'].forEach(evt => {
-    document.addEventListener(evt, function retryPlay() {
-      if (musicPlaying) startMusic();
-      document.removeEventListener(evt, retryPlay);
+    document.addEventListener(evt, function firstInteract() {
+      unmuteMusic();
+      document.removeEventListener(evt, firstInteract);
     }, { once: true });
   });
 
-  musicToggle.addEventListener('click', () => {
-    if (musicPlaying) {
-      bgMusic.pause();
-      musicToggle.textContent = '🔇';
+  musicToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (bgMusic.muted || bgMusic.paused) {
+      unmuteMusic();
     } else {
-      startMusic();
-      musicToggle.textContent = '🔊';
+      bgMusic.muted = true;
+      syncToggleIcon();
     }
-    musicPlaying = !musicPlaying;
   });
 });
