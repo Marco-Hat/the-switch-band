@@ -357,28 +357,6 @@ html, body {
   overflow: hidden;
 }
 
-.about-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: .55;
-}
-.about-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, #0a0a0a 0%, rgba(10,10,10,.3) 22%, rgba(10,10,10,.3) 82%, #0a0a0a 100%);
-}
-
-.about > *:not(.about-bg) {
-  position: relative;
-  z-index: 3;
-}
-
 .story-content {
   max-width: 720px;
   width: 100%;
