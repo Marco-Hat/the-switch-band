@@ -180,6 +180,19 @@ html, body {
   width: auto;
 }
 
+.music-toggle {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.3);
+  color: #eee;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.music-toggle:hover { border-color: var(--red); color: var(--red); }
+
 .nav-links { display: flex; gap: 2rem; }
 .nav-links a {
   color: #eee;
@@ -285,15 +298,23 @@ html, body {
   background: #0a0a0a;
 }
 .story-content {
-  max-width: 780px;
-  margin: 2rem auto 0;
+  max-width: 720px;
+  width: 100%;
+  margin: 2.2rem auto 0;
+  padding: 0 .5rem;
   text-align: left;
 }
 .story-content p {
   color: #ccc;
-  line-height: 1.8;
-  margin-bottom: 1.4rem;
-  font-size: 1.02rem;
+  line-height: 1.9;
+  margin-bottom: 1.6rem;
+  font-size: 1.05rem;
+  font-weight: 300;
+  letter-spacing: .2px;
+}
+.story-content p:first-of-type {
+  color: #eee;
+  font-size: 1.15rem;
 }
 .story-content p:last-child { margin-bottom: 0; }
 
@@ -366,7 +387,7 @@ html, body {
 .music { background: #000; padding-bottom: 6rem; text-align: center; }
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   max-width: 1100px;
   margin: 2.5rem auto 0;
@@ -417,6 +438,11 @@ html, body {
 }
 .social-links a:hover { border-color: var(--red); color: var(--red); }
 
+@media (max-width: 900px) {
+  .video-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 700px) {
   .nav-links { display: none; }
+  .video-grid { grid-template-columns: 1fr; }
 }

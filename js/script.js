@@ -33,4 +33,34 @@ document.addEventListener('DOMContentLoaded', () => {
     clearTimeout(autoTimer);
     revealSite();
   });
+
+  // Background music — on by default, muted until a user gesture allows audio
+  const bgMusic = document.getElementById('bgMusic');
+  const musicToggle = document.getElementById('musicToggle');
+  let musicPlaying = true;
+  musicToggle.textContent = '🔊';
+
+  function startMusic() {
+    bgMusic.play().catch(() => {});
+  }
+
+  startMusic();
+  // Browsers block autoplay with sound before any interaction; retry on the first one.
+  ['click', 'scroll', 'keydown'].forEach(evt => {
+    document.addEventListener(evt, function retryPlay() {
+      if (musicPlaying) startMusic();
+      document.removeEventListener(evt, retryPlay);
+    }, { once: true });
+  });
+
+  musicToggle.addEventListener('click', () => {
+    if (musicPlaying) {
+      bgMusic.pause();
+      musicToggle.textContent = '🔇';
+    } else {
+      startMusic();
+      musicToggle.textContent = '🔊';
+    }
+    musicPlaying = !musicPlaying;
+  });
 });
