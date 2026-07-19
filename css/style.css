@@ -438,6 +438,41 @@ html, body {
 }
 .social-links a:hover { border-color: var(--red); color: var(--red); }
 
+.visitor-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
+  margin: 1.5rem 0;
+}
+.counter-label {
+  font-size: .7rem;
+  letter-spacing: 3px;
+  color: #666;
+}
+.counter-digits {
+  display: flex;
+  gap: 3px;
+}
+.counter-digit {
+  width: 1.6rem;
+  height: 2.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.3rem;
+  color: #dfe4ea;
+  background: linear-gradient(180deg, #4a4d52 0%, #232427 45%, #0c0c0d 55%, #313337 100%);
+  border: 1px solid #050505;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.35),
+    inset 0 -2px 3px rgba(0,0,0,.6),
+    0 1px 2px rgba(0,0,0,.6);
+  text-shadow: 0 1px 1px rgba(0,0,0,.8), 0 -1px 0 rgba(255,255,255,.15);
+}
+
 @media (max-width: 900px) {
   .video-grid { grid-template-columns: repeat(2, 1fr); }
 }
