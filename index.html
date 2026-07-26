@@ -29,6 +29,7 @@
       <img class="nav-logo" src="assets/wordmark-hero.png" alt="THE SWITCH">
       <nav class="nav-links">
         <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#jukebox" data-i18n="navJukebox">Jukebox</a>
         <a href="#gallery" data-i18n="navGallery">Gallery</a>
         <a href="#music" data-i18n="navMusic">Music</a>
         <a href="#booking" data-i18n="navBooking">Booking</a>
@@ -40,11 +41,8 @@
           <button class="lang-btn" data-lang="tl" aria-label="Tagalog">🇵🇭</button>
           <button class="lang-btn" data-lang="fr" aria-label="Français">🇫🇷</button>
         </div>
-        <button id="musicToggle" class="music-toggle" aria-label="Toggle background music">🔇</button>
       </div>
     </header>
-
-    <audio id="bgMusic" src="assets/oye-como-va.mp3" loop muted autoplay preload="auto"></audio>
 
     <section class="hero">
       <div class="hero-bg hero-bg--1" style="background-image: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.85) 70%, #000), url('assets/hero-bg-1.jpg');"></div>
@@ -90,6 +88,23 @@
           <h3 data-i18n-html="featOneBand">One Band<br>All Night</h3>
         </div>
       </div>
+    </section>
+
+    <section id="jukebox" class="jukebox">
+      <h2 class="section-title" data-i18n="jukeboxTitle">REHEARSAL JUKEBOX</h2>
+      <p class="section-sub" data-i18n="jukeboxSub">Covers we've been working on — flip through and hit play.</p>
+      <div class="coverflow" id="coverflow">
+        <button class="cf-arrow cf-arrow--left" id="cfPrev" aria-label="Previous track">‹</button>
+        <div class="cf-track" id="cfTrack"></div>
+        <button class="cf-arrow cf-arrow--right" id="cfNext" aria-label="Next track">›</button>
+      </div>
+      <div class="cf-info">
+        <h3 id="cfTitle"></h3>
+        <p id="cfArtist"></p>
+        <button id="cfPlay" class="cf-play-btn" aria-label="Play">▶</button>
+        <p id="cfProgress" class="cf-progress"></p>
+      </div>
+      <audio id="cfAudio" preload="none"></audio>
     </section>
 
     <section id="gallery" class="gallery">
@@ -146,6 +161,7 @@
   </div>
 
   <script src="js/i18n.js"></script>
+  <script src="js/jukebox.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

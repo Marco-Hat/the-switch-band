@@ -34,40 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     revealSite();
   });
 
-  // Background music — starts muted (autoplay policy), unmutes on toggle or first interaction
-  const bgMusic = document.getElementById('bgMusic');
-  const musicToggle = document.getElementById('musicToggle');
-
-  function syncToggleIcon() {
-    musicToggle.textContent = bgMusic.muted || bgMusic.paused ? '🔇' : '🔊';
-  }
-
-  function unmuteMusic() {
-    bgMusic.muted = false;
-    bgMusic.play().catch(() => {});
-    syncToggleIcon();
-  }
-
-  syncToggleIcon();
-
-  // Browsers allow muted autoplay; unmute on the visitor's first interaction.
-  ['click', 'scroll', 'keydown'].forEach(evt => {
-    document.addEventListener(evt, function firstInteract() {
-      unmuteMusic();
-      document.removeEventListener(evt, firstInteract);
-    }, { once: true });
-  });
-
-  musicToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (bgMusic.muted || bgMusic.paused) {
-      unmuteMusic();
-    } else {
-      bgMusic.muted = true;
-      syncToggleIcon();
-    }
-  });
-
   // Visitor counter — metallic digit tiles, seeded to start around 13595
   const counterDigits = document.getElementById('counterDigits');
   const COUNTER_OFFSET = 13594; // countapi "hit" starts its own count at 1
