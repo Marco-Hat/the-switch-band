@@ -181,6 +181,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('site:revealed', () => {
     if (!isPlaying) loadCurrent(true);
+    // iOS Safari sometimes fails to render the 3D transforms until something
+    // actually moves — nudge the track with a tiny tilt to force it in.
+    setTimeout(() => { tiltTrack(1); }, 950);
   });
 
   render();
