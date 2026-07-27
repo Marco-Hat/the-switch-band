@@ -9,7 +9,8 @@ const JUKEBOX_TRACKS = [
   { title: 'Oh! Darling', artist: 'The Beatles', cover: 'assets/covers/oh-darling.jpg', audio: 'assets/audio/oh-darling.m4a' },
   { title: 'Underneath It All', artist: 'No Doubt', cover: 'assets/covers/underneath-it-all.jpg', audio: 'assets/audio/underneath-it-all.m4a' },
   { title: 'I Want to Break Free', artist: 'Queen', cover: 'assets/covers/i-want-to-break-free.jpg', audio: 'assets/audio/i-want-to-break-free.m4a' },
-  { title: 'The Story', artist: 'Brandi Carlile', cover: 'assets/covers/the-story.jpg', audio: 'assets/audio/the-story.m4a' }
+  { title: 'The Story', artist: 'Brandi Carlile', cover: 'assets/covers/the-story.jpg', audio: 'assets/audio/the-story.m4a' },
+  { title: 'Whenever, Wherever', artist: 'Shakira', cover: 'assets/covers/whenever-wherever.jpg', audio: 'assets/audio/whenever-wherever.m4a' }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {

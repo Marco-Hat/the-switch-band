@@ -536,7 +536,7 @@ html, body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: calc(50% - var(--cf-size) * 1.85);
+  left: 4px;
   background: transparent;
   border: 2px solid #333;
   color: #fff;
@@ -549,7 +549,7 @@ html, body {
   z-index: 60;
   transition: border-color .2s, color .2s;
 }
-.cf-arrow--right { left: auto; right: calc(50% - var(--cf-size) * 1.85); }
+.cf-arrow--right { left: auto; right: 4px; }
 .cf-arrow:hover { border-color: var(--red); color: var(--red); }
 
 .cf-info { margin-top: 2rem; }
