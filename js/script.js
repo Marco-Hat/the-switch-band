@@ -17,6 +17,19 @@ document.addEventListener('DOMContentLoaded', () => {
     site.classList.add('show');
     document.body.style.overflow = 'auto';
     setTimeout(() => { intro.style.display = 'none'; }, 850);
+
+    // Some browsers fail to establish the coverflow's 3D transforms while
+    // the site's opacity transition is running, leaving covers flat until
+    // the user interacts with them — force a reflow once it's visible.
+    setTimeout(() => {
+      const track = document.getElementById('cfTrack');
+      if (!track) return;
+      track.style.display = 'none';
+      void track.offsetHeight;
+      track.style.display = '';
+    }, 900);
+
+    document.dispatchEvent(new CustomEvent('site:revealed'));
   }
 
   // Lock scroll during intro

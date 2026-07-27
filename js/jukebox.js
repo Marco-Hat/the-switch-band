@@ -3,7 +3,13 @@ const JUKEBOX_TRACKS = [
   { title: 'Stand By Me / Every Breath You Take', artist: 'Ben E. King / The Police', cover: 'assets/covers/stand-by-me-medley.jpg', audio: 'assets/audio/stand-by-me-medley.m4a' },
   { title: 'Tennessee Whiskey', artist: 'Chris Stapleton', cover: 'assets/covers/tennessee-whiskey.jpg', audio: 'assets/audio/tennessee-whiskey.m4a' },
   { title: 'The Way', artist: 'Fastball', cover: 'assets/covers/the-way.jpg', audio: 'assets/audio/the-way.m4a' },
-  { title: "What's Up", artist: '4 Non Blondes', cover: 'assets/covers/whats-up.jpg', audio: 'assets/audio/whats-up.m4a' }
+  { title: "What's Up", artist: '4 Non Blondes', cover: 'assets/covers/whats-up.jpg', audio: 'assets/audio/whats-up.m4a' },
+  { title: 'Dreams', artist: 'The Cranberries', cover: 'assets/covers/dreams.jpg', audio: 'assets/audio/dreams.m4a' },
+  { title: 'Birds of a Feather', artist: 'Billie Eilish', cover: 'assets/covers/birds-of-a-feather.jpg', audio: 'assets/audio/birds-of-a-feather.m4a' },
+  { title: 'Oh! Darling', artist: 'The Beatles', cover: 'assets/covers/oh-darling.jpg', audio: 'assets/audio/oh-darling.m4a' },
+  { title: 'Underneath It All', artist: 'No Doubt', cover: 'assets/covers/underneath-it-all.jpg', audio: 'assets/audio/underneath-it-all.m4a' },
+  { title: 'I Want to Break Free', artist: 'Queen', cover: 'assets/covers/i-want-to-break-free.jpg', audio: 'assets/audio/i-want-to-break-free.m4a' },
+  { title: 'The Story', artist: 'Brandi Carlile', cover: 'assets/covers/the-story.jpg', audio: 'assets/audio/the-story.m4a' }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,7 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const prevBtn = document.getElementById('cfPrev');
   const nextBtn = document.getElementById('cfNext');
 
-  let current = 0;
+  let current = JUKEBOX_TRACKS.findIndex(t => t.title.startsWith('Stand By Me'));
+  if (current < 0) current = 0;
   let isPlaying = false;
 
   JUKEBOX_TRACKS.forEach((t, i) => {
@@ -28,6 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
     item.innerHTML = `
       <div class="cf-cover">
         <img class="cf-art" src="${t.cover}" alt="${t.title}">
+        <div class="cf-badge-bg" aria-hidden="true"></div>
+        <img class="cf-badge" src="assets/wordmark-poster-logo.png" alt="" aria-hidden="true">
         <img class="cf-reflection" src="${t.cover}" alt="" aria-hidden="true">
       </div>`;
     item.addEventListener('click', () => goTo(i));
@@ -168,6 +177,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const dx = e.changedTouches[0].clientX - touchStartX;
     if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
     touchStartX = null;
+  });
+
+  document.addEventListener('site:revealed', () => {
+    if (!isPlaying) loadCurrent(true);
   });
 
   render();
